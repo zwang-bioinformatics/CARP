@@ -1,0 +1,59 @@
+{
+
+    "training_params": {
+        "epochs": 25,
+        "learning_rate": 0.001,
+        "patience": 10,
+        "batch_size": 64, 
+        "data_tag": "HYBRID-1.0",
+        "type": "hybrid-comprehensive-seq"
+    },
+    "architecture":{
+        
+        "top_k_ratio": 0.25,
+
+        "gps_config": {
+            "dropout": 0.25,
+            "conv": "GINEConv"
+        },
+
+        "gnn_model_config": {
+            "depth": 1, 
+            "kind": "TransformerConv",
+            "params": {
+                "out_channels": 96,
+                "heads": 5,
+                "concat": false, 
+                "beta": false, 
+                "dropout": 0.25
+            }
+        }, 
+        "gnn_interface_config": {
+            "depth": 1, 
+            "kind": "TransformerConv",
+            "params": {
+                "out_channels": 64,
+                "heads": 4,
+                "concat": false, 
+                "beta": false, 
+                "dropout": 0.25
+            }
+        },
+        "global_fold_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.25,
+            "dropout_map": 0.25
+        },
+        "global_interface_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.25,
+            "dropout_map": 0.25
+        },
+        "interface_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.25,
+            "dropout_map": 0.25
+        }
+    }
+
+}
