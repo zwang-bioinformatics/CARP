@@ -11,57 +11,57 @@
 > [!NOTE]
 Running CARP requires specific formatting for the input files
 
-#### **`target_src/`** (Sequence-Derived Features)
-This directory contains the target-level features and reference files.
+##### `target_src/` (Sequence-Derived Features)
+This directory points to the location for target-level features and reference file/s.
 * Must contain `rna.fasta` and `prot.fasta`.
 * Must include monomeric protein reference `.pdb` files. We used relaxed AlphaFold2 predictions via [ColabFold](https://github.com/sokrypton/colabfold). The files must match the fasta IDs in the `prot.fasta` file.
 
-#### **`model_src/`** (Structure-Derived Features)
-This directory contains the model-level features.
+##### `model_src/` (Structure-Derived Features)
+This directory points to the location for model-level features.
 * Must contain `model.pdb`.
 
-### **Example** 
-Input `prot.fasta`:
-```
->p0
-PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
->p1
-VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQMAYSNLLRANMDGLKKRDKKNKTKKTK
-```
-Input `rna.fasta`:
-```
->r0
-GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
-```
-
-Input directory hierarchy:
-```
-├── {target_src}/
-│   ├── rna.fasta
-│   ├── prot.fasta
-│   ├── p0.pdb
-│   └── p1.pdb
-└── {model_src}/
-    └── model.pdb
-```
-
-1. **Generate Features**  
+### Generate Features 
 
 ```
 python run_tools.py -target_src {target_src} -model_src {model_src}
 ```
 
-2. **Quality Score Inferenece**   
+### Perform Quality Score Inference 
 
 ```
 python run.py -target_src {target_src} -model_src {model_src}
 ```
 
   The CARP predicted qualities can be found @:
-  > *`{model_src}/predicted_quality/carp.csv`* and *`{model_src}/predicted_quality/carp.pkl`
+  > *`{model_src}/predicted_quality/carp.csv`* and *`{model_src}/predicted_quality/carp.pkl`*
 
-### **Example Output** 
+### **Example** 
 
+Fasta `prot.fasta`
+```
+>p0
+PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
+>p1
+VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQMAYSNLLRANMDGLKKRDKKNKTKKTK
+```
+Fasta `rna.fasta`
+```
+>r0
+GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
+```
+
+Inputs:
+```
+├── {target_src}/
+│   ├── rna.fasta
+│   ├── prot.fasta
+│   ├── p0.pdb (AlphaFold2 reference prediction for sequence p0)
+│   └── p1.pdb (AlphaFold2 reference prediction for sequence p1)
+└── {model_src}/
+    └── model.pdb
+```
+
+Outputs:
  ```
 ├── {target_src}/
 │   ├── rna.fasta
