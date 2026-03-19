@@ -6,9 +6,10 @@
 ## Installation
 [Installation goes here]
 
-## Basic Usage
+## Usage
 
-Running CARP requires specific formatting for the input files:
+> [!NOTE]
+Running CARP requires specific formatting for the input files
 
 #### **`target_src/`** (Sequence-Derived Features)
 This directory contains the target-level features and reference files.
@@ -19,14 +20,21 @@ This directory contains the target-level features and reference files.
 This directory contains the model-level features.
 * Must contain `model.pdb`.
 
-### **Example Input** 
-**`prot.fasta`**
+### **Example** 
+Input `prot.fasta`:
 ```
 >p0
 PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
 >p1
 VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQMAYSNLLRANMDGLKKRDKKNKTKKTK
 ```
+Input `rna.fasta`:
+```
+>r0
+GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
+```
+
+Input directory hierarchy:
 ```
 ├── {target_src}/
 │   ├── rna.fasta
@@ -84,4 +92,6 @@ python run.py -target_src {target_src} -model_src {model_src}
 ```
 ### **Citation**  
 
+
+[![DOI]()]()
 
