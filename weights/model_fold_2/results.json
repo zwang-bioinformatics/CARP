@@ -1,0 +1,28 @@
+{
+    "training_loss": 0.03882905042945418,
+    "training_metrics": {
+        "per_interface_ics": 0.04054334493546751,
+        "per_interface_ips": 0.052365407824885746,
+        "bb_lddt": 0.016015334850446927,
+        "oligo_gdtts": 0.03395519986113153,
+        "oligo_gdtha": 0.030959775543722937,
+        "ilddt": 0.03125785838901287,
+        "ics": 0.03882704274125972,
+        "ips": 0.03620712917949748
+    },
+    "validation_metrics": {
+        "combined": 0.07908580634804262,
+        "per_interface_ics": 0.07038492991245913,
+        "per_interface_ips": 0.08808160134450825,
+        "bb_lddt": 0.03667933509443687,
+        "oligo_gdtts": 0.06571464550949505,
+        "oligo_gdtha": 0.05736997530815224,
+        "ilddt": 0.09851006945330941,
+        "ics": 0.1110404870906761,
+        "ips": 0.0967571698178979
+    },
+    "epoch": 9,
+    "lr": 0.001,
+    "data_tag": "HYBRID-FOLD-2",
+    "config": "FOLD2_model_25.even.drop_0.25_32.json"
+}

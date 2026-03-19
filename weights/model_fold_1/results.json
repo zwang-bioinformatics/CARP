@@ -1,0 +1,28 @@
+{
+    "training_loss": 0.03509819044168469,
+    "training_metrics": {
+        "per_interface_ics": 0.03576612795828655,
+        "per_interface_ips": 0.04827281724848337,
+        "bb_lddt": 0.014395829275618484,
+        "oligo_gdtts": 0.03190473078938634,
+        "oligo_gdtha": 0.029369951702725453,
+        "ilddt": 0.02792758452469529,
+        "ics": 0.034602140287049735,
+        "ips": 0.0331513715991057
+    },
+    "validation_metrics": {
+        "combined": 0.06717324822059782,
+        "per_interface_ics": 0.06552568642717227,
+        "per_interface_ips": 0.09083407321632204,
+        "bb_lddt": 0.031663588719372956,
+        "oligo_gdtts": 0.046227291388973434,
+        "oligo_gdtha": 0.03932234087564621,
+        "ilddt": 0.06100321927851032,
+        "ics": 0.07603294012736976,
+        "ips": 0.08275030692861834
+    },
+    "epoch": 12,
+    "lr": 0.0005,
+    "data_tag": "HYBRID-FOLD-1",
+    "config": "FOLD1_model_25.k50_0.25_32_med.json"
+}
