@@ -7,8 +7,7 @@ Please update the init.py with the correct paths
 1. 
     IPKnot: https://github.com/satoken/ipknot
 2. 
-    NetSurfP: https://services.healthtech.dtu.dk/services/NetSurfP-3.0/
-        > download version 3.0
+    NetSurfP (3.0): https://services.healthtech.dtu.dk/services/NetSurfP-3.0/
 3. 
     AMIGOS: https://github.com/pylelab/AMIGOS
 4.
