@@ -6,11 +6,9 @@
 ## Installation
 [Installation goes here]
 
-Running CARP requires specific formatting for the input files:
-
-
-
 ## Basic Usage
+
+Running CARP requires specific formatting for the input files:
 
 #### **`target_src/`** (Sequence-Derived Features)
 This directory contains the target-level features and reference files.
