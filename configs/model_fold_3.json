@@ -1,0 +1,62 @@
+{
+
+    "training_params": {
+        "epochs": 100,
+        "learning_rate": 0.001,
+        "patience": 5,
+        "batch_size": 32, 
+        "quantile": 0.25,
+        "weight_decay": 0.01,
+        "decay_filter": false,
+        "data_tag": "HYBRID-FOLD-3",
+        "type": "hybrid-comprehensive-seq"
+    },
+    "architecture":{
+        
+        "top_k_ratio": 0.25,
+
+        "gps_config": {
+            "dropout": 0.35,
+            "conv": "GINEConv"
+        },
+
+        "gnn_model_config": {
+            "depth": 1, 
+            "kind": "TransformerConv",
+            "params": {
+                "out_channels": 96,
+                "heads": 5,
+                "concat": false, 
+                "beta": false, 
+                "dropout": 0.35
+            }
+        }, 
+        "gnn_interface_config": {
+            "depth": 1, 
+            "kind": "TransformerConv",
+            "params": {
+                "out_channels": 64,
+                "heads": 4,
+                "concat": false, 
+                "beta": false, 
+                "dropout": 0.35
+            }
+        },
+        "global_fold_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.1,
+            "dropout_map": 0.1
+        },
+        "global_interface_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.1,
+            "dropout_map": 0.1
+        },
+        "interface_pool": {
+            "out_channels": 32,
+            "dropout_gate": 0.1,
+            "dropout_map": 0.1
+        }
+    }
+
+}
