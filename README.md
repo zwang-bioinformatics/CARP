@@ -22,8 +22,8 @@ This directory contains the model-level features.
 * Must contain `model.pdb`.
 
 ### **Example Input** 
-- `prot.fasta`
-```fasta
+**`prot.fasta`**
+```
 >p0
 PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
 >p1
@@ -34,7 +34,7 @@ VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQM
 │   ├── rna.fasta
 │   ├── prot.fasta
 │   ├── p0.pdb
-│   ├── p1.pdb
+│   └── p1.pdb
 └── {model_src}/
     └── model.pdb
 ```
