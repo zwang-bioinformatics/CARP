@@ -1,25 +1,43 @@
 # Inferring the qualities of protein-RNA models with graph transformers
 
-### **Abstract**
+## Abstract
+[Abstract goes here]
 
-### **Installation**
+## Installation
+[Installation goes here]
 
-### **Basic Usage**
+Running CARP requires specific formatting for the input files:
 
-Requirements for running CARP:
 
-* **`target_src`**
 
-  This is the path for the target-level (sequence-derived) features. 
-    It must contain *`{target_src}/rna.fasta`* and *`{target_src}/prot.fasta`*.
-    You must also provide monomeric protein reference *.pdb* files (ideally using colabfold),
-    and name them as *`{target_src}/{FASTA-ID}.pdb`*, where *`{FASTA-ID}`* is the corresponding
-    ID found for the respective sequence in the *`{target_src}/prot.fasta`*,
-    e.g., *`{target_src}/p0.pdb`*, *`{target_src}/p1.pdb`*, ...
+## Basic Usage
 
-* **`model_src`**
+#### **`target_src/`** (Sequence-Derived Features)
+This directory contains the target-level features and reference files.
+* Must contain `rna.fasta` and `prot.fasta`.
+* Must include monomeric protein reference `.pdb` files. We used relaxed AlphaFold2 predictions via [ColabFold](https://github.com/sokrypton/colabfold). The files must match the fasta IDs in the `prot.fasta` file.
 
-  This is the path for the model level (structure-derived) feaures, and must contain *`{model_src}/model.pdb`*. 
+#### **`model_src/`** (Structure-Derived Features)
+This directory contains the model-level features.
+* Must contain `model.pdb`.
+
+### **Example Input** 
+- `prot.fasta`
+```fasta
+>p0
+PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
+>p1
+VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQMAYSNLLRANMDGLKKRDKKNKTKKTK
+```
+```
+├── {target_src}/
+│   ├── rna.fasta
+│   ├── prot.fasta
+│   ├── p0.pdb
+│   ├── p1.pdb
+└── {model_src}/
+    └── model.pdb
+```
 
 1. **Generate Features**  
 
@@ -34,4 +52,38 @@ python run.py -target_src {target_src} -model_src {model_src}
 ```
 
   The CARP predicted qualities can be found @:
-  > *`{model_src}/predicted_quality/carp.csv`* and *`{model_src}/predicted_quality/carp.pkl`*
+  > *`{model_src}/predicted_quality/carp.csv`* and *`{model_src}/predicted_quality/carp.pkl`
+
+### **Example Output** 
+
+ ```
+├── {target_src}/
+│   ├── rna.fasta
+│   ├── prot.fasta
+│   ├── p0.pdb
+│   ├── p1.pdb
+│   ├── bp.mat
+│   ├── out.bpseq
+│   ├── feats.log
+│   └── nsp/
+│       └── 01/
+│           └── 01.csv
+├── {model_src}/
+│   ├── model.pdb
+│   ├── dssp.npy
+│   ├── agged_features.npy
+│   ├── feats.log
+│   ├── RNAView_out/
+│   │   └── ...
+│   ├── forgi_out/
+│   │   └── ...
+│   ├── amigos_output/
+│   │    └── ...
+│   └── predicted_quality/
+│       └── carp.csv
+│       └── carp.pkl
+
+```
+ 
+
+
