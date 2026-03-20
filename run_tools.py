@@ -65,8 +65,8 @@ if args.target_src is not None:
         command = " ".join([
             "conda run -n", NSP_ENV,
             "python",
-            "/home/asiciliano/CARP/tools/NetSurfP-3.0/NetSurfP-3.0_standalone/nsp3.py",
-            "-m","/home/asiciliano/CARP/tools/NetSurfP-3.0/NetSurfP-3.0_standalone/models/nsp3.pth",
+            f"{NSP3_PATH}/NetSurfP-3.0_standalone/nsp3.py",
+            "-m",f"{NSP3_PATH}/NetSurfP-3.0_standalone/models/nsp3.pth",
             "-i", f"{args.target_src}/prot.fasta",
             "-o", f"{args.target_src}/nsp/"
         ])
@@ -85,7 +85,7 @@ if args.target_src is not None:
 
         command = " ".join([
             "cat", f"{args.target_src}/rna.fasta",
-            "| /home/asiciliano/RNA-QA/src/resources/LinearPartition/linearpartition",
+            f"| {LINEAR_PARTITION_PATH}/linearpartition",
             "--verbose",
             "--fasta",
             "--output", args.target_src + "bp.mat",
@@ -101,7 +101,7 @@ if args.target_src is not None:
     #   > IPKnot
 
         command = " ".join([
-            "/home/asiciliano/CARP/tools/ipknot/build/ipknot",
+            f"{IPKNOT_PATH}/build/ipknot",
             f"{args.target_src}/rna.fasta", "-b",
             ">", args.target_src + "out.bpseq"
         ])
@@ -157,7 +157,7 @@ if args.model_src is not None:
 
         command = " ".join([
             "python", f"{ROOT}/src/amigos.py",
-            f"-p {ROOT}/tools/AMIGOS/AMIGOS.pl",
+            f"-p {AMIGOS_PATH}/AMIGOS.pl",
             f"-out_dir {args.model_src}/amigos_output/"
         ])
         print(subprocess.getoutput(command))
@@ -202,7 +202,7 @@ if args.model_src is not None:
 
         command = " ".join([
             f"OMP_NUM_THREADS={forgi_threads} OPENBLAS_NUM_THREADS={forgi_threads} MKL_NUM_THREADS={forgi_threads}",
-            "python", "/home/asiciliano/CARP/src/forgi_fallback.py",
+            "python", f"{ROOT}/src/forgi_fallback.py",
             f"{args.model_src}/model.pdb",
             f"{args.model_src}/forgi_out/",
             ">", f"{args.model_src}/forgi_out/fallback.log"
