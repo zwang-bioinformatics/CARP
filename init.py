@@ -1,3 +1,5 @@
+###################################
+
 ROOT = "/home/asiciliano/CARP/"
 
 IPKNOT_PATH = f"{ROOT}tools/ipknot/build/ipknot"
@@ -11,6 +13,15 @@ RNAVIEW_PATH = f"{ROOT}tools/RNAView/"
 NSP3_PATH = f"{ROOT}tools/"
 
 NSP_ENV = "nsp3"
+
+###################################
+
+model_setup = {
+    f"{ROOT}/data/configs/model_fold_{fold}.json": f"{ROOT}/data/weights/model_fold_{fold}/"
+    for fold in range(1,6)
+}
+
+###################################
 
 nf_keys = [
     
