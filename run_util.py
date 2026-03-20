@@ -155,12 +155,7 @@ def build_features(agged_features, norm_stats):
                 # print(A, B, (chk == 0 or chk == example["polymer_kind"][curr_connect].shape[0]) == (not example["polymer_kind"][curr_connect][[0,-1]].sum() == 1))
                 # print("CHK",chk, example["polymer_kind"][curr_connect])
                 if chk == 0 or chk == example["polymer_kind"][curr_connect].shape[0]: continue
-                # print(example["polymer_kind"][curr_connect][[0,-1]], torch.unique(example["polymer_kind"][curr_connect]))
-                # print(example["polymer_kind"][curr_connect].sum(), example["polymer_kind"][curr_connect].shape, example["polymer_kind"][curr_connect][[0,-1]])
-                # if not example["polymer_kind"][curr_connect][[0,-1]].sum() == 1: continue # prolly better way to do this??? ensure both prot and rna are there...
-                # print(A, B, example["polymer_kind"].shape, curr_connect.shape)
-
-
+                    
                 curr_connect = torch.cat(
                     (
                         curr_connect, 
