@@ -19,7 +19,7 @@ pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.0+cu118
 ```
 External Tools:
-- Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP_ENV` in `init.py` accordingly. 
+- Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP3_PATH` in `init.py` accordingly. 
 
 - Install [IPKnot](https://github.com/satoken/ipknot), then update the `IPKNOT_PATH` in `init.py` accordingly. 
 
@@ -31,7 +31,7 @@ External Tools:
 
 - Install [MCAnnotate](https://major.iric.ca/MajorLabEn/MC-Tools.html):
 
-  Download and unzip [MC-Annotate.zip](https://major.iric.ca/MajorLabEn/MC-Tools_files/MC-Annotate.zip), then put the executable in {ROOT}/tools
+  Download and unzip [MC-Annotate.zip](https://major.iric.ca/MajorLabEn/MC-Tools_files/MC-Annotate.zip).
   Put the MC-Annotate executable in `{ROOT}/tools/`, then run:
   ```
   export PATH="$PATH:{ROOT}/tools
