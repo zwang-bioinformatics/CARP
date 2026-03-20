@@ -1,16 +1,16 @@
 ###################################
 
-ROOT = "/home/asiciliano/CARP/"
+ROOT = "/home/asiciliano/CARP/" # UPDATE
 
-IPKNOT_PATH = f"{ROOT}tools/ipknot/build/ipknot"
+IPKNOT_PATH = f"{ROOT}tools/ipknot/"
 
-AMIGOS_PATH = f"{ROOT}tools/"
+AMIGOS_PATH = f"{ROOT}tools/AMIGOS/"
 
-LINEAR_PARTITION_PATH = f"{ROOT}tools/"
+LINEAR_PARTITION_PATH = f"{ROOT}tools/LinearPartition/"
 
 RNAVIEW_PATH = f"{ROOT}tools/RNAView/"
 
-NSP3_PATH = f"{ROOT}tools/"
+NSP3_PATH = f"{ROOT}tools/NetSurfP-3.0/"
 
 NSP_ENV = "nsp3"
 
