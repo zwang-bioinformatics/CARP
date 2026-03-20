@@ -37,7 +37,7 @@ External Tools:
   export PATH="$PATH:{ROOT}/tools
   source .bashrc
   ```
-  You must have MC-Annotate added to your path.
+  You should have MC-Annotate added to your path.
 
 ## Usage
 
