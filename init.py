@@ -59,6 +59,9 @@ nf_keys = [
     "disorder_netsurfp",
     
 ]
+
+###################################
+
 ef_keys = [
     
     "model_atom_distance",
@@ -76,6 +79,8 @@ ef_keys = [
     "is_prot_rna",
 
 ]
+
+###################################
 
 ANGLE_FEATS = set([
     
@@ -100,3 +105,5 @@ ANGLE_FEATS = set([
     "angle_model_com"
 
 ])
+
+###################################
