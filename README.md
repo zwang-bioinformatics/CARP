@@ -18,6 +18,9 @@ pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https
 pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.0+cu118
 ```
+> [!IMPORTANT]
+Update the paths in `init.py` accordingly. 
+
 External Tools:
 - Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP3_PATH` in `init.py` accordingly. 
 
@@ -32,12 +35,17 @@ External Tools:
 - Install [MCAnnotate](https://major.iric.ca/MajorLabEn/MC-Tools.html):
 
   Download and unzip [MC-Annotate.zip](https://major.iric.ca/MajorLabEn/MC-Tools_files/MC-Annotate.zip).
-  Put the MC-Annotate executable in `{ROOT}/tools/`, then run:
+  Put the MC-Annotate executable in `{ROOT}/tools/`.
+
+  To use MC-Annotate in your current session:
   ```
-  export PATH="$PATH:{ROOT}/tools
-  source .bashrc
+  export PATH="$PATH:{ROOT}/tools"
   ```
-  You should add MC-Annotate your path.
+  Alternatively, you can permanently add MC-Annotate your path:
+  ```
+  echo 'export PATH="$PATH:{ROOT}/tools"' >> ~/.bashrc
+  source ~/.bashrc
+  ```
 
 ## Usage
 
