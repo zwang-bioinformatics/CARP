@@ -1,5 +1,4 @@
 # Inferring the qualities of protein-RNA models with graph transformers
-<p align="center"><img src=".github/pipeline.png"/></p>
 
 ## Abstract
 [Abstract goes here]
