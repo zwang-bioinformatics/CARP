@@ -31,7 +31,7 @@ External Tools:
 
 - Install [MCAnnotate](https://major.iric.ca/MajorLabEn/MC-Tools.html):
 
-  Download and unzip `MC-Annotate.zip`, then put the executable in {ROOT}/tools
+  Download and unzip [MC-Annotate.zip](https://major.iric.ca/MajorLabEn/MC-Tools_files/MC-Annotate.zip), then put the executable in {ROOT}/tools
   Put the MC-Annotate executable in `{ROOT}/tools/`, then run:
   ```
   export PATH="$PATH:{ROOT}/tools
