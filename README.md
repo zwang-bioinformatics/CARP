@@ -89,10 +89,8 @@ Outputs:
 │   └── predicted_quality/
 │       └── carp.csv
 │       └── carp.pkl
-
 ```
 ### **Citation**  
-
 
 [![DOI]()]()
 
