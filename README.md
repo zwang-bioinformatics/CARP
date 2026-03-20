@@ -5,7 +5,39 @@
 [Abstract goes here]
 
 ## Installation
-[Installation goes here]
+
+CARP Conda Environment:
+```
+conda create -n CARP python=3.9
+conda activate CARP
+conda install salilab::dssp
+conda install bioconda::forgi
+
+pip install biopython==1.79
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
+pip install torch_geometric==2.5.2
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.0+cu118
+```
+External Tools:
+- Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP_ENV` in `init.py` accordingly. 
+
+- Install [IPKnot](https://github.com/satoken/ipknot), then update the `IPKNOT_PATH` in `init.py` accordingly. 
+
+- Install [AMIGOS](https://github.com/pylelab/AMIGOS/), then update the `AMIGOS_PATH` in `init.py` accordingly. 
+
+- Install [LinearPartition](https://github.com/LinearFold/LinearPartition/), then update the `LINEAR_PARTITION_PATH` in `init.py` accordingly. 
+
+- Install [RNAView](https://github.com/rcsb/RNAView/), then update the `RNAVIEW_PATH` in `init.py` accordingly. 
+
+- Install [MCAnnotate](https://major.iric.ca/MajorLabEn/MC-Tools.html):
+
+  Download and unzip `MC-Annotate.zip`, then put the executable in {ROOT}/tools
+  Put the MC-Annotate executable in `{ROOT}/tools/`, then run:
+  ```
+  export PATH="$PATH:{ROOT}/tools
+  source .bashrc
+  ```
+  You must have MC-Annotate added to your path.
 
 ## Usage
 
