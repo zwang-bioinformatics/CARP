@@ -78,14 +78,16 @@ python run.py -target_src {target_src} -model_src {model_src}
 
 ### **Example** 
 
-Fasta `prot.fasta`
+This is an example case for the CASP16 target `M1209` and model `M1209TS006_1`.
+
+Fasta `{ROOT}/data/example/prot.fasta`
 ```
 >p0
-PQYQTWEEFSRAAEKLYLADPMKARVVLKYRHSDGNLCVKVTDDLVCLVYKTDQAQDVKKIEKFHSQLMRLMVAKEARNVTMETE
+EISEVQLVESGGGLVQPGGSLRLSCAASGFYISYSSIHWVRQAPGKGLEWVASISPYSGSTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCARQGYRRRSGRGFDYWGQGTLVTVSSASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHT
 >p1
-VLLESEQFLTELTRLFQKCRTSGSVYITLKKYDGRTKPIPKKGTVEGFEPADNKCLLRATDGKKKISTVVSSKEVNKFQMAYSNLLRANMDGLKKRDKKNKTKKTK
+SDIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYSFPSTFGQGTKVEIKRTVAAPSVFIFPPSDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSADSTYSLSSTLTLSKADYEKHKVYACEVTHQGLSSPVTKSFNRGEC
 ```
-Fasta `rna.fasta`
+Fasta `{ROOT}/data/example/rna.fasta`
 ```
 >r0
 GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
@@ -102,6 +104,12 @@ Inputs:
     └── model.pdb
 ```
 
+Example command for scoring a single example:
+```
+run_tools.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
+run.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
+```
+
 Outputs:
  ```
 ├── {target_src}/
@@ -111,7 +119,6 @@ Outputs:
 │   ├── p1.pdb
 │   ├── bp.mat
 │   ├── out.bpseq
-│   ├── feats.log
 │   └── nsp/
 │       └── 01/
 │           └── 01.csv
@@ -119,7 +126,6 @@ Outputs:
 │   ├── model.pdb
 │   ├── dssp.npy
 │   ├── agged_features.npy
-│   ├── feats.log
 │   ├── RNAView_out/
 │   │   └── ...
 │   ├── forgi_out/
@@ -130,6 +136,14 @@ Outputs:
 │       └── carp.csv
 │       └── carp.pkl
 ```
+
+The generated output can be compared with the expected outputs (which we provided),
+
+`{ROOT}/data/example/example_model_output.csv` and `{ROOT}/data/example/example_model_output.csv`,
+
+to confirm everything is functional.
+
+
 ### **Citation**  
 
 [![DOI]()]()
