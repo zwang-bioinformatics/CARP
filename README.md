@@ -55,7 +55,7 @@ Running CARP requires specific formatting for the input files
 ##### `target_src/` (sequence-derived features)
 This directory points to the location for target-level features and reference file/s.
 * Must contain `rna.fasta` and `prot.fasta`.
-* Must contain monomeric protein reference `.pdb` files. We recommend using relaxed AlphaFold2 prediction/s via [ColabFold](https://github.com/sokrypton/colabfold). The file/s must match the fasta ID/s in the `prot.fasta` file.
+* Must contain monomeric protein reference `.pdb` files. We recommend using relaxed AlphaFold2 prediction/s via [ColabFold](https://github.com/sokrypton/colabfold). The file/s must match the fasta ID/s in the `prot.fasta` file. Note: we have provided these for the benchmarking targets. 
 
 ##### `model_src/` (structure-derived features)
 This directory points to the location for model-level features.
