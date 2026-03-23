@@ -104,10 +104,10 @@ Inputs:
     └── model.pdb
 ```
 
-Example command for scoring a single example:
+Commands:
 ```
-run_tools.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
-run.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
+python run_tools.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
+python run.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
 ```
 
 Outputs:
