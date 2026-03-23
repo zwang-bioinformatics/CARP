@@ -137,9 +137,9 @@ Outputs:
 │       └── carp.pkl
 ```
 
-The generated output can be compared with the expected outputs (which we provided),
+The generated output can be compared with the expected outputs,
 
-`{ROOT}/data/example/example_model_output.csv` and `{ROOT}/data/example/example_model_output.csv`,
+`{ROOT}/data/example/expected_model_output.csv` and `{ROOT}/data/example/expected_model_output.csv`,
 
 to confirm everything is functional.
 
