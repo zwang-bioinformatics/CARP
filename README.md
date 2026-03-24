@@ -6,6 +6,7 @@
 
 ## Installation
 
+### Step 1:
 CARP Conda Environment:
 ```
 conda create -n CARP python=3.9
@@ -19,15 +20,16 @@ pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https
 pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118.html
 ```
-
+### Step 2:
 Clone the CARP repo:
 ```
 git clone https://github.com/zwang-bioinformatics/CARP.git
 cd ./CARP
 ```
-
 > [!IMPORTANT]
-Update the paths in `init.py` accordingly.<br>Every occurance (below) of `{ROOT}` should be replaced with your respective path which points to the directory `CARP/`.
+Every occurance (below) of `{ROOT}` should be replaced with your respective path which points to the directory `./CARP/`.
+
+### Step 3:
 
 Install the External Tools:
 - Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP3_PATH` in `init.py` accordingly. 
@@ -54,6 +56,9 @@ Install the External Tools:
   echo 'export PATH="$PATH:{ROOT}/tools"' >> ~/.bashrc
   source ~/.bashrc
   ```
+
+> [!IMPORTANT]
+Update the paths in `init.py` accordingly.
 
 ## Usage
 
