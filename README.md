@@ -74,13 +74,13 @@ This directory points to the location for target-level features and reference fi
 This directory points to the location for model-level features.
 * Must contain `model.pdb`.
 
-### Generate Features 
+### Generate Features:
 
 ```
 python run_tools.py -target_src {target_src} -model_src {model_src}
 ```
 
-### Perform Quality Score Inference 
+### Perform Quality Score Inference:
 
 ```
 python run.py -target_src {target_src} -model_src {model_src}
