@@ -6,7 +6,7 @@
 
 ## Installation
 
-### Step 1:
+#### Step 1:
 CARP Conda Environment:
 ```
 conda create -n CARP python=3.9
@@ -20,7 +20,7 @@ pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https
 pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118.html
 ```
-### Step 2:
+#### Step 2:
 Clone the CARP repo:
 ```
 git clone https://github.com/zwang-bioinformatics/CARP.git
@@ -29,7 +29,7 @@ cd ./CARP
 > [!IMPORTANT]
 Every occurance (below) of `{ROOT}` should be replaced with your respective path which points to the directory `./CARP/`.
 
-### Step 3:
+#### Step 3:
 
 Install the External Tools:
 - Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP3_PATH` in `init.py` accordingly. 
@@ -74,13 +74,13 @@ This directory points to the location for target-level features and reference fi
 This directory points to the location for model-level features.
 * Must contain `model.pdb`.
 
-### Generate Features:
+#### Generate Features:
 
 ```
 python run_tools.py -target_src {target_src} -model_src {model_src}
 ```
 
-### Perform Quality Score Inference:
+#### Perform Quality Score Inference:
 
 ```
 python run.py -target_src {target_src} -model_src {model_src}
@@ -89,18 +89,18 @@ python run.py -target_src {target_src} -model_src {model_src}
   The CARP predicted qualities can be found @:
   > *`{model_src}/predicted_quality/carp.csv`* and *`{model_src}/predicted_quality/carp.pkl`*
 
-### **Example** 
+#### **Example**:
 
 This is an example case for the CASP16 target `M1209` and model `M1209TS006_1`.
 
-Fasta `{ROOT}/data/example/prot.fasta`
+Fasta `./data/example/prot.fasta`
 ```
 >p0
 EISEVQLVESGGGLVQPGGSLRLSCAASGFYISYSSIHWVRQAPGKGLEWVASISPYSGSTYYADSVKGRFTISADTSKNTAYLQMNSLRAEDTAVYYCARQGYRRRSGRGFDYWGQGTLVTVSSASTKGPSVFPLAPSSKSTSGGTAALGCLVKDYFPEPVTVSWNSGALTSGVHTFPAVLQSSGLYSLSSVVTVPSSSLGTQTYICNVNHKPSNTKVDKKVEPKSCDKTHT
 >p1
 SDIQMTQSPSSLSASVGDRVTITCRASQSVSSAVAWYQQKPGKAPKLLIYSASSLYSGVPSRFSGSRSGTDFTLTISSLQPEDFATYYCQQSYSFPSTFGQGTKVEIKRTVAAPSVFIFPPSDEQLKSGTASVVCLLNNFYPREAKVQWKVDNALQSGNSQESVTEQDSADSTYSLSSTLTLSKADYEKHKVYACEVTHQGLSSPVTKSFNRGEC
 ```
-Fasta `{ROOT}/data/example/rna.fasta`
+Fasta `./data/example/rna.fasta`
 ```
 >r0
 GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
@@ -119,8 +119,8 @@ Inputs:
 
 Commands:
 ```
-python run_tools.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
-python run.py -target_src {ROOT}/data/example/ -model_src {ROOT}/data/example/example_model/
+python run_tools.py -target_src ./data/example/ -model_src ./data/example/example_model/
+python run.py -target_src ./data/example/ -model_src ./data/example/example_model/
 ```
 
 Outputs:
@@ -152,7 +152,7 @@ Outputs:
 
 The generated output can be compared with the expected outputs,
 
-`{ROOT}/data/example/expected_model_output.csv` and `{ROOT}/data/example/expected_model_output.csv`,
+`./data/example/expected_model_output.csv` and `./data/example/expected_model_output.csv`,
 
 to confirm everything is functional.
 
