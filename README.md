@@ -12,7 +12,7 @@ conda create -n CARP python=3.9
 conda activate CARP
 conda install salilab::dssp
 pip install logging-exceptions==0.1.9
-pip install forgi==2.2.3 --only-binary :all:
+pip install forgi==2.2.3 --only-binary :all: --no-deps
 pip install biopython==1.79
 pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric==2.5.2
