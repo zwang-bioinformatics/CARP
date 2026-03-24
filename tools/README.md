@@ -23,3 +23,21 @@ Please update the init.py with the correct paths
         Run `` source .bashrc ``
         
 ###################################
+
+Scoring Structures:
+
+You should install [OpenStructure](https://openstructure.org/install), specifically version 2.11.1.
+We used the OST provided [docker file](https://git.scicore.unibas.ch/schwede/openstructure/-/blob/master/docker/Dockerfile) and started the docker container using the following command:
+```
+docker run -d --name ost_worker --network host --entrypoint "" -v /home/asiciliano/CARP/tools/:/root/tools -v /home/asiciliano/CARP/data/targets/:/root/targets ost_2.11.1 tail -f /dev/null
+```
+You can verify the container is running by using:
+```
+docker ps
+```
+To terminate and remove the container:
+```
+docker stop ost_worker && docker rm ost_worker
+```
+
+###################################
