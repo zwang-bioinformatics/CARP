@@ -16,7 +16,7 @@ pip install logging-exceptions==0.1.9
 pip install forgi==2.2.3 --only-binary :all: --no-deps
 pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric==2.5.2
-pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118.html
 
 ```
 > [!IMPORTANT]
