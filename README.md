@@ -20,7 +20,7 @@ pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118.html
 ```
 > [!IMPORTANT]
-Update the paths in `init.py` accordingly.<br>Every occurance (below) of `{ROOT}` should be replaced with your respective directory.
+Update the paths in `init.py` accordingly.<br>Every occurance (below) of `{ROOT}` should be replaced with your respective path which points to the directory `CARP/`.
 
 External Tools:
 - Install [NetSurfP-3.0](https://services.healthtech.dtu.dk/services/NetSurfP-3.0/), then update the `NSP_ENV` & `NSP3_PATH` in `init.py` accordingly. 
