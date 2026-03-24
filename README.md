@@ -4,7 +4,7 @@
 ## Abstract
 [Abstract goes here]
 
-## Install
+## Installation
 
 ### Step 1:
 CARP Conda Environment:
