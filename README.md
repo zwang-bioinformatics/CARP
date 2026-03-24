@@ -11,11 +11,13 @@ CARP Conda Environment:
 conda create -n CARP python=3.9
 conda activate CARP
 conda install salilab::dssp
+pip install logging-exceptions==0.1.9
 pip install forgi==2.2.3 --only-binary :all:
 pip install biopython==1.79
 pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric==2.5.2
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.2+cu118
+
 ```
 > [!IMPORTANT]
 Update the paths in `init.py` accordingly.<br>Every occurance (below) of `{ROOT}` should be replaced with your respective directory.
