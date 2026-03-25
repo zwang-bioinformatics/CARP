@@ -15,7 +15,7 @@ conda install salilab::dssp
 conda install -c conda-forge boost-cpp=1.73.0
 pip install biopython==1.79
 pip install logging-exceptions==0.1.9
-pip install --only-binary :all: "appdirs>=1.4" cython "future" "pandas>=0.20" "scipy>=0.19.1" numpy==1.26.4
+pip install --only-binary :all: "appdirs>=1.4" cython "future" "pandas>=0.20" "scipy>=0.19.1" numpy==1.26.4 numba more_itertools
 pip install forgi==2.2.3 --only-binary :all: --no-deps
 pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric==2.5.2
