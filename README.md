@@ -27,7 +27,7 @@ git clone https://github.com/zwang-bioinformatics/CARP.git
 cd ./CARP
 ```
 > [!IMPORTANT]
-Note `ROOT` in `init.py` should point to the absolute path of `./CARP/`.
+Note `ROOT` in `init.py` should point to the absolute path of `./CARP`.
 
 #### Step 3:
 
