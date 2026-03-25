@@ -79,7 +79,7 @@ if args.target_src is not None:
 
     ###############
 
-    if not os.path.exists(args.target_src + "bp.mat"): 
+    if not os.path.exists(args.target_src + "/bp.mat"): 
 
     #   > Linear Partition
 
@@ -88,7 +88,7 @@ if args.target_src is not None:
             f"| {LINEAR_PARTITION_PATH}/linearpartition",
             "--verbose",
             "--fasta",
-            "--output", args.target_src + "bp.mat",
+            "--output", args.target_src + "/bp.mat",
             ">", args.target_src + "/linpart.log"
         ])
         print(command)
