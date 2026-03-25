@@ -65,8 +65,8 @@ if args.target_src is not None:
         command = " ".join([
             "conda run -n", NSP_ENV,
             "python",
-            f"{NSP3_PATH}/NetSurfP-3.0_standalone/nsp3.py",
-            "-m",f"{NSP3_PATH}/NetSurfP-3.0_standalone/models/nsp3.pth",
+            f"{NSP3_PATH}/nsp3.py",
+            "-m",f"{NSP3_PATH}/models/nsp3.pth",
             "-i", f"{args.target_src}/prot.fasta",
             "-o", f"{args.target_src}/nsp/"
         ])
