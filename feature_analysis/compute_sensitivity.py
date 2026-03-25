@@ -146,12 +146,6 @@ for target in os.listdir(f"/home/asiciliano/CARP/data/targets/{dataset}/"):
 importance = pd.DataFrame(importance)
 
 importance['ad_quantile'] = importance.groupby(['CARP', 'src_dir', 'component_type'])['abs_delta'].rank(method = "max", pct=True)
-# importance['ad_quantile'] = importance.groupby(['CARP', 'src_dir'])['abs_delta'].rank(method = "max", pct=True)
-# importance = importance.groupby(['CARP', 'features', 'features_category', "component_type", "src_dir"]).mean(numeric_only=True).reset_index()
-
-# print(importance)
-
-# importance = importance[importance["ad_quantile"] >= 0.90]
 
 ###################################
 
