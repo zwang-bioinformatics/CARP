@@ -27,7 +27,7 @@ git clone https://github.com/zwang-bioinformatics/CARP.git
 cd ./CARP
 ```
 > [!IMPORTANT]
-Every occurance (below) of `{ROOT}` should be replaced with your respective path which points to the directory `./CARP/`.
+Note `ROOT` in `init.py` should point to the absolute path of `./CARP/`.
 
 #### Step 3:
 
@@ -45,15 +45,15 @@ Install the External Tools:
 - Install [MCAnnotate](https://major.iric.ca/MajorLabEn/MC-Tools.html):
 
   Download and unzip [MC-Annotate.zip](https://major.iric.ca/MajorLabEn/MC-Tools_files/MC-Annotate.zip).
-  Put the MC-Annotate executable in `{ROOT}/tools/`.
+  Put the MC-Annotate executable in `./tools/`.
 
   To use MC-Annotate in your current session:
   ```
-  export PATH="$PATH:{ROOT}/tools"
+  export PATH="$PATH:./tools"
   ```
   Alternatively, you can permanently add MC-Annotate your path:
   ```
-  echo 'export PATH="$PATH:{ROOT}/tools"' >> ~/.bashrc
+  echo 'export PATH="$PATH:./tools"' >> ~/.bashrc
   source ~/.bashrc
   ```
 
