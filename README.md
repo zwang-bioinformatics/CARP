@@ -109,12 +109,12 @@ GGGCCGGGCGCGGUGGCGCGCGCCUGUAGUCCCAGCUACUCGGGAGGCUC
 
 Inputs:
 ```
-├── {target_src}/
+├── ./data/example/ (target_src)
 │   ├── rna.fasta
 │   ├── prot.fasta
 │   ├── p0.pdb (AlphaFold2 reference prediction for sequence p0)
 │   └── p1.pdb (AlphaFold2 reference prediction for sequence p1)
-└── {model_src}/
+└── ./data/example/example_model/ (model_src)
     └── model.pdb
 ```
 
@@ -126,7 +126,7 @@ python run.py -target_src ./data/example/ -model_src ./data/example/example_mode
 
 Outputs:
  ```
-├── {target_src}/
+├── ./data/example/ (target_src)
 │   ├── rna.fasta
 │   ├── prot.fasta
 │   ├── p0.pdb
@@ -136,7 +136,7 @@ Outputs:
 │   └── nsp/
 │       └── 01/
 │           └── 01.csv
-├── {model_src}/
+├── ./data/example/example_model/ (model_src)
 │   ├── model.pdb
 │   ├── dssp.npy
 │   ├── agged_features.npy
