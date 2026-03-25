@@ -142,7 +142,8 @@ if __name__ == "__main__":
         sigmoid = nn.Sigmoid()
         
         tf = load_target_features(target_src)
-        if tf is None: continue
+        # if tf is None: continue
+        assert tf is not None, "ERROR: target features not found..."
 
         dfs = []
 
