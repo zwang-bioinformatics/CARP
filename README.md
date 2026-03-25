@@ -12,6 +12,7 @@ CARP Conda Environment:
 conda create -n CARP python=3.9
 conda activate CARP
 conda install salilab::dssp
+conda install -c conda-forge boost-cpp=1.73.0
 pip install biopython==1.79
 pip install logging-exceptions==0.1.9
 pip install --only-binary :all: "appdirs>=1.4" cython "future" "pandas>=0.20" "scipy>=0.19.1"
