@@ -89,7 +89,7 @@ if args.target_src is not None:
             "--verbose",
             "--fasta",
             "--output", args.target_src + "bp.mat",
-            ">", args.target_src + "linpart.log"
+            ">", args.target_src + "/linpart.log"
         ])
         print(command)
         print(subprocess.getoutput(command))
