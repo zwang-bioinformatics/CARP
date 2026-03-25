@@ -120,6 +120,8 @@ if __name__ == "__main__":
     target_src = args.target_src
     model_src = args.model_src
 
+    df = []
+    
     with torch.no_grad():
         sigmoid = nn.Sigmoid()
         
@@ -201,11 +203,11 @@ if __name__ == "__main__":
             predictions["config"] = model_tag
             df += [predictions]
 
-        ##################
+    ##################
 
-        df = pd.DataFrame(df)
-        os.makedirs(model_src + "/predicted_quality/", exist_ok = True)
-        df[global_keys + ["config"]].to_csv(model_src + "/predicted_quality/carp.csv")
-        df.to_pickle(model_src + "/predicted_quality/carp.pkl")
+    df = pd.DataFrame(df)
+    os.makedirs(model_src + "/predicted_quality/", exist_ok = True)
+    df[global_keys + ["config"]].to_csv(model_src + "/predicted_quality/carp.csv")
+    df.to_pickle(model_src + "/predicted_quality/carp.pkl")
 
 ###################################
