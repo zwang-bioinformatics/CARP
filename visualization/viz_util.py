@@ -370,7 +370,7 @@ def gather(sub_tasks, include_other=True):
                     [chain_map[a], chain_map[b]]
                 ))
 
-        # chain mapping here is not so clear... using true_scores.json always for interface scores
+        # chain mapping here is not so clear... using scores.json always for interface scores
         # if casp_scores is not None:
         #     for i, dimer in enumerate(casp_scores["ICS_Interfaces"]):
         #         iface = ".".join(sorted(dimer))
