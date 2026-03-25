@@ -93,8 +93,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-target_src", action="store", type=str, help="")
-    parser.add_argument("-model_src", action="store_true", help="")
-    parser.add_argument("-device", action="store", help="device", default="cpu")
+    parser.add_argument("-model_src", action="store_true", type=str, help="")
+    parser.add_argument("-device", action="store", help="device", type=str, default="cpu")
 
     args = parser.parse_args()
     # device = "cuda:0" 
