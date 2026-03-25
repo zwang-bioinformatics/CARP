@@ -67,24 +67,6 @@ def check_complete(model_src):
     ])]
 
     return all(checks)
-
-###################################
-
-def load_raw_features(sub_tasks):
-    out = {}
-    for model_src in sub_tasks:
-        out[model_src] =  build_features(np.load(model_src + "/agged_features.npy", allow_pickle=True), {})
-    return len(sub_tasks), out
-
-###################################
-
-def compute_raw_features(sub_tasks, tf):
-    for model_src in sub_tasks:
-        if not os.path.exists(model_src + "/agged_features.npy"):
-            agged_features = aggregate_features(tf, model_src)
-            if not args.no_save: 
-                np.save(model_src + "/agged_features.npy", np.array(agged_features, dtype=object))
-    return len(sub_tasks)
     
 ###################################
 
@@ -142,143 +124,88 @@ if __name__ == "__main__":
         sigmoid = nn.Sigmoid()
         
         tf = load_target_features(target_src)
-        # if tf is None: continue
         assert tf is not None, "ERROR: target features not found..."
+        
+        ##################
 
-        dfs = []
+        if not os.path.exists(model_src + "/agged_features.npy"):
+            agged_features = aggregate_features(tf, model_src)
+            np.save(model_src + "/agged_features.npy", np.array(agged_features, dtype=object))
+
+        agged_features = np.load(model_src + "/agged_features.npy", allow_pickle=True)
+        example = build_features(agged_features, {})
+
+        example["src_dir"] = model_src
+        example = collate_fn([example]).to(device)
 
         ##################
 
-        model_tasks = []
-        for model_src in tasks[target_src]:
-            # if os.path.exists(model_src + "/agged_features.npy"): 
-            #     os.remove(model_src + "/agged_features.npy")
-            if not os.path.exists(model_src + "/agged_features.npy"): model_tasks += [model_src]
+        for model_tag in predictors: 
 
-            ##################
+            interface_out, global_out = predictors[model_tag]["model"](
+                norm_feats(
+                    example["node_features"].clone() , 
+                    predictors[model_tag]["norm_stats"], 
+                    example["out_idx_node"][0][0], # should be the same for every graph in the batch....
+                    nf_keys,
+                ),
+                norm_feats(
+                    example["edge_features"].clone(), 
+                    predictors[model_tag]["norm_stats"], 
+                    example["out_idx_edge"][0][0], # should be the same for every graph in the batch....
+                    ef_keys,
+                ),
+                example["edge_index"].clone().permute(1,0).long(),#.to(device),
+                example["interface_connect"].clone().long(),#.to(device),
+                torch.unsqueeze(example["polymer_kind"].clone().float(), dim=1),#.to(device),
+                torch.unsqueeze(example["prot_rna_interface"].clone().float(), dim=1),#.to(device),
+                example["topk_idx"].clone().long(),#.to(device),
+                example["batch"].clone().long(),#.to(device)
+            )
 
-            if not args.no_save and len(model_tasks):
+            # print(interface_out)
 
-                if args.procs == 1: compute_raw_features(tqdm(model_tasks, desc = f"{target_src.split('/')[-2]} - building model features"), tf)
-                else: 
-                    num_jobs = len(model_tasks) if args.jobs > len(model_tasks) else args.jobs
-                    with tqdm(total=len(model_tasks),desc = f"{target_src.split('/')[-2]} - building model features") as pbar:
+            predictions = {
+                "interface": [],
+                "interface_ics_pred": [],
+                "interface_ips_pred": []
+            }
 
-                        pool = Pool(processes=args.procs)
+            #################
 
-                        jobs = [
-                            pool.apply_async(
-                                compute_raw_features, 
-                                args=(chunk, tf,), 
-                                callback=lambda r: 
-                                pbar.update(r)
-                            ) 
-                            for chunk in chunked(model_tasks, math.ceil(len(model_tasks)/num_jobs))
-                        ]
+            if interface_out is not None: 
 
-                        pool.close()
-                        pool.join()
+                interface_out = sigmoid(interface_out).cpu().numpy()
 
-                        for j in jobs: j.get()
+                # print(example["interface_names"][0][0])
+                # print(example["interface_map"][0])
+                for i, iface_idx in enumerate(example["interface_map"][0]): 
+                    interface_ics_pred = interface_out[i][0]#.item()
+                    interface_ips_pred = interface_out[i][1]#.item()
+                    # predictions["interface"] += [meta["contact_model_interfaces"][str(iface_idx.item())]]
+                    predictions["interface"] += [example["interface_names"][0][0][i]] # only one example in each batch...
+                    predictions["interface_ics_pred"] += [interface_ics_pred]
+                    predictions["interface_ips_pred"] += [interface_ips_pred]
 
-            ##################
+                predictions["interface_ics_pred"] = np.array(predictions["interface_ics_pred"])
+                predictions["interface_ips_pred"] = np.array(predictions["interface_ips_pred"])
 
-            # continue
+            #################
 
-            for model_src in tqdm(tasks[target_src], desc = target_src.split("/")[-2]):
+            global_out = torch.squeeze(sigmoid(global_out)).cpu().numpy()#.item()
 
-                df = []
+            for i, key in enumerate(global_keys): 
+                predictions[key] = global_out[i]#.item()
+            
+            predictions["src_dir"] = example["src_dir"][0]
+            predictions["config"] = model_tag
+            df += [predictions]
 
-                if os.path.exists(model_src + "/predicted_quality/carp.pkl"):
-                    os.remove(model_src + "/predicted_quality/carp.pkl")
-                    os.remove(model_src + "/predicted_quality/carp.csv")
-                    # print("oiiikkk")
-                    # continue
-                    # print(model_src)
+        ##################
 
-                # continue
-                ##################
-
-                if args.no_save: 
-                    if not os.path.exists(model_src + "/agged_features.npy"):
-                        agged_features = aggregate_features(tf, model_src)
-                        if not args.no_save: 
-                            np.save(model_src + "/agged_features.npy", np.array(agged_features, dtype=object))
-
-                agged_features = np.load(model_src + "/agged_features.npy", allow_pickle=True)
-                example = build_features(agged_features, {})
-
-                example["src_dir"] = model_src
-                example = collate_fn([example]).to(device)
-
-                ##################
-
-                for model_tag in predictors: 
-
-                    interface_out, global_out = predictors[model_tag]["model"](
-                        norm_feats(
-                            example["node_features"].clone() , 
-                            predictors[model_tag]["norm_stats"], 
-                            example["out_idx_node"][0][0], # should be the same for every graph in the batch....
-                            nf_keys,
-                        ),
-                        norm_feats(
-                            example["edge_features"].clone(), 
-                            predictors[model_tag]["norm_stats"], 
-                            example["out_idx_edge"][0][0], # should be the same for every graph in the batch....
-                            ef_keys,
-                        ),
-                        example["edge_index"].clone().permute(1,0).long(),#.to(device),
-                        example["interface_connect"].clone().long(),#.to(device),
-                        torch.unsqueeze(example["polymer_kind"].clone().float(), dim=1),#.to(device),
-                        torch.unsqueeze(example["prot_rna_interface"].clone().float(), dim=1),#.to(device),
-                        example["topk_idx"].clone().long(),#.to(device),
-                        example["batch"].clone().long(),#.to(device)
-                    )
-
-                    # print(interface_out)
-
-                    predictions = {
-                        "interface": [],
-                        "interface_ics_pred": [],
-                        "interface_ips_pred": []
-                    }
-
-                    #################
-
-                    if interface_out is not None: 
-
-                        interface_out = sigmoid(interface_out).cpu().numpy()
-
-                        # print(example["interface_names"][0][0])
-                        # print(example["interface_map"][0])
-                        for i, iface_idx in enumerate(example["interface_map"][0]): 
-                            interface_ics_pred = interface_out[i][0]#.item()
-                            interface_ips_pred = interface_out[i][1]#.item()
-                            # predictions["interface"] += [meta["contact_model_interfaces"][str(iface_idx.item())]]
-                            predictions["interface"] += [example["interface_names"][0][0][i]] # only one example in each batch...
-                            predictions["interface_ics_pred"] += [interface_ics_pred]
-                            predictions["interface_ips_pred"] += [interface_ips_pred]
-
-                        predictions["interface_ics_pred"] = np.array(predictions["interface_ics_pred"])
-                        predictions["interface_ips_pred"] = np.array(predictions["interface_ips_pred"])
-
-                    #################
-
-                    global_out = torch.squeeze(sigmoid(global_out)).cpu().numpy()#.item()
-
-                    for i, key in enumerate(global_keys): 
-                        predictions[key] = global_out[i]#.item()
-                    
-                    predictions["src_dir"] = example["src_dir"][0]
-                    predictions["config"] = model_tag
-                    df += [predictions]
-
-                ##################
-
-                df = pd.DataFrame(df)
-                os.makedirs(model_src + "/predicted_quality/", exist_ok = True)
-                df[global_keys + ["config"]].to_csv(model_src + "/predicted_quality/carp.csv")
-                df.to_pickle(model_src + "/predicted_quality/carp.pkl")
+        df = pd.DataFrame(df)
+        os.makedirs(model_src + "/predicted_quality/", exist_ok = True)
+        df[global_keys + ["config"]].to_csv(model_src + "/predicted_quality/carp.csv")
+        df.to_pickle(model_src + "/predicted_quality/carp.pkl")
 
 ###################################
