@@ -222,10 +222,10 @@ if args.model_src is not None:
 
         command = [
             "python", f"{ROOT}/src/rnaview.py",
-            "-p", args.model_src + "model.pdb",
-            "-o", args.model_src + "RNAView_out/", 
+            "-p", args.model_src + "/model.pdb",
+            "-o", args.model_src + "/RNAView_out/", 
             "-b", RNAVIEW_PATH + "/bin/",
-            ">", args.model_src + "RNAView_out/out.log"
+            ">", args.model_src + "/RNAView_out/out.log"
         ]
         
         print(subprocess.getoutput(" ".join(command)))
