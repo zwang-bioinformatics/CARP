@@ -1,0 +1,212 @@
+,Unnamed: 0,bench_pdb_id,method,overlap-type
+0,0,1C0A,DARS & QUASI,protein-sequence
+1,1,1IL2,DARS & QUASI,protein-sequence
+2,2,1QTQ,DARS & QUASI,protein-sequence
+3,3,1JID,DARS & QUASI,protein-sequence
+4,4,1J1U,DARS & QUASI,protein-sequence
+5,5,1N78,DARS & QUASI,protein-sequence
+6,6,1DFU,DARS & QUASI,protein-sequence
+7,7,1JBS,DARS & QUASI,protein-sequence
+8,8,1OOA,DARS & QUASI,protein-sequence
+9,9,1R9F,DARS & QUASI,protein-sequence
+10,10,2BH2,DARS & QUASI,protein-sequence
+11,11,1F7U,DARS & QUASI,protein-sequence
+12,12,1RC7,DARS & QUASI,protein-sequence
+13,13,3OVB,DARS & QUASI,protein-sequence
+14,14,3LWR,DARS & QUASI,protein-sequence
+15,15,1YVP,DARS & QUASI,protein-sequence
+16,16,1QTQ,DARS & QUASI,rna-sequence
+17,17,1C0A,DARS & QUASI,rna-sequence
+18,18,1JID,DARS & QUASI,rna-sequence
+19,19,1J1U,DARS & QUASI,rna-sequence
+20,20,2UWM,DARS & QUASI,rna-sequence
+21,21,1DFU,DARS & QUASI,rna-sequence
+22,22,1N78,DARS & QUASI,rna-sequence
+23,23,1JBS,DARS & QUASI,rna-sequence
+24,24,1OOA,DARS & QUASI,rna-sequence
+25,25,1R9F,DARS & QUASI,rna-sequence
+26,26,2BH2,DARS & QUASI,rna-sequence
+27,27,2ZZM,3dRPC,protein-sequence
+28,28,2RFK,3dRPC,protein-sequence
+29,29,2AKE,3dRPC,protein-sequence
+30,30,1RC7,3dRPC,protein-sequence
+31,31,3ADD,3dRPC,protein-sequence
+32,32,2XDB,3dRPC,protein-sequence
+33,33,2ANR,3dRPC,protein-sequence
+34,34,3OVB,3dRPC,protein-sequence
+35,35,3LWR,3dRPC,protein-sequence
+36,36,2AKE,3dRPC,rna-sequence
+37,37,2XDB,3dRPC,rna-sequence
+38,38,3ADD,3dRPC,rna-sequence
+39,39,2ANR,3dRPC,rna-sequence
+40,40,1DFU,3dRPC,rna-sequence
+41,41,2R8S,ITScore-PR,protein-sequence
+42,42,1JID,ITScore-PR,protein-sequence
+43,43,2ZZM,ITScore-PR,protein-sequence
+44,44,2HW8,ITScore-PR,protein-sequence
+45,45,2RFK,ITScore-PR,protein-sequence
+46,46,3LRR,ITScore-PR,protein-sequence
+47,47,1N78,ITScore-PR,protein-sequence
+48,48,1RC7,ITScore-PR,protein-sequence
+49,49,3ADD,ITScore-PR,protein-sequence
+50,50,1S03,ITScore-PR,protein-sequence
+51,51,3OVB,ITScore-PR,protein-sequence
+52,52,3LWR,ITScore-PR,protein-sequence
+53,53,1YVP,ITScore-PR,protein-sequence
+54,54,1QTQ,ITScore-PR,rna-sequence
+55,55,1C0A,ITScore-PR,rna-sequence
+56,56,1JID,ITScore-PR,rna-sequence
+57,57,1J1U,ITScore-PR,rna-sequence
+58,58,2UWM,ITScore-PR,rna-sequence
+59,59,1DFU,ITScore-PR,rna-sequence
+60,60,1N78,ITScore-PR,rna-sequence
+61,61,1JBS,ITScore-PR,rna-sequence
+62,62,1OOA,ITScore-PR,rna-sequence
+63,63,1R9F,ITScore-PR,rna-sequence
+64,64,2BH2,ITScore-PR,rna-sequence
+65,65,1IL2,DRPScore,protein-sequence
+66,66,1E8O,DRPScore,protein-sequence
+67,67,1MMS,DRPScore,protein-sequence
+68,68,2HW8,DRPScore,protein-sequence
+69,69,3LRR,DRPScore,protein-sequence
+70,70,1G1X,DRPScore,protein-sequence
+71,71,1KOG,DRPScore,protein-sequence
+72,72,3LWR,DRPScore,protein-sequence
+73,73,1C0A,DRPScore,protein-sequence
+74,74,2R8S,DRPScore,protein-sequence
+75,75,2ZZM,DRPScore,protein-sequence
+76,76,1R9F,DRPScore,protein-sequence
+77,77,1F7U,DRPScore,protein-sequence
+78,78,1RC7,DRPScore,protein-sequence
+79,79,3HHZ,DRPScore,protein-sequence
+80,80,2ANR,DRPScore,protein-sequence
+81,81,1S03,DRPScore,protein-sequence
+82,82,3DD2,DRPScore,protein-sequence
+83,83,3OVB,DRPScore,protein-sequence
+84,84,2BTE,DRPScore,protein-sequence
+85,85,1Q2R,DRPScore,protein-sequence
+86,86,3FOZ,DRPScore,rna-sequence
+87,87,2ZM5,DRPScore,rna-sequence
+88,88,1J1U,DRPScore,rna-sequence
+89,89,2ANR,DRPScore,rna-sequence
+90,90,1Q2R,DRPScore,rna-sequence
+91,91,1MMS,ITScore-PR,rna-fam
+92,92,3MOJ,ITScore-PR,rna-fam
+93,93,1H4S,ITScore-PR,rna-fam
+94,94,1IL2,ITScore-PR,rna-fam
+95,95,1GAX,ITScore-PR,rna-fam
+96,96,1N78,ITScore-PR,rna-fam
+97,97,1SER,ITScore-PR,rna-fam
+98,98,3FOZ,ITScore-PR,rna-fam
+99,99,1C0A,ITScore-PR,rna-fam
+100,100,1QTQ,ITScore-PR,rna-fam
+101,101,2DU3,ITScore-PR,rna-fam
+102,102,1J1U,ITScore-PR,rna-fam
+103,103,2CSX,ITScore-PR,rna-fam
+104,104,3EPH,ITScore-PR,rna-fam
+105,105,1H3E,ITScore-PR,rna-fam
+106,106,1F7U,ITScore-PR,rna-fam
+107,107,2AKE,ITScore-PR,rna-fam
+108,108,2ZM5,ITScore-PR,rna-fam
+109,109,3ADD,ITScore-PR,rna-fam
+110,110,2ZUE,ITScore-PR,rna-fam
+111,111,2FMT,ITScore-PR,rna-fam
+112,112,2CZJ,ITScore-PR,rna-fam
+113,113,2BTE,ITScore-PR,rna-fam
+114,114,1MMS,DARS & QUASI,rna-fam
+115,115,3MOJ,DARS & QUASI,rna-fam
+116,116,1H4S,DARS & QUASI,rna-fam
+117,117,1IL2,DARS & QUASI,rna-fam
+118,118,1GAX,DARS & QUASI,rna-fam
+119,119,1N78,DARS & QUASI,rna-fam
+120,120,1SER,DARS & QUASI,rna-fam
+121,121,3FOZ,DARS & QUASI,rna-fam
+122,122,1C0A,DARS & QUASI,rna-fam
+123,123,1QTQ,DARS & QUASI,rna-fam
+124,124,2DU3,DARS & QUASI,rna-fam
+125,125,1J1U,DARS & QUASI,rna-fam
+126,126,2CSX,DARS & QUASI,rna-fam
+127,127,3EPH,DARS & QUASI,rna-fam
+128,128,1H3E,DARS & QUASI,rna-fam
+129,129,1F7U,DARS & QUASI,rna-fam
+130,130,2AKE,DARS & QUASI,rna-fam
+131,131,2ZM5,DARS & QUASI,rna-fam
+132,132,3ADD,DARS & QUASI,rna-fam
+133,133,2ZUE,DARS & QUASI,rna-fam
+134,134,2FMT,DARS & QUASI,rna-fam
+135,135,2CZJ,DARS & QUASI,rna-fam
+136,136,2BTE,DARS & QUASI,rna-fam
+137,137,1H4S,3dRPC,rna-fam
+138,138,1IL2,3dRPC,rna-fam
+139,139,1GAX,3dRPC,rna-fam
+140,140,1N78,3dRPC,rna-fam
+141,141,1SER,3dRPC,rna-fam
+142,142,3FOZ,3dRPC,rna-fam
+143,143,1C0A,3dRPC,rna-fam
+144,144,1QTQ,3dRPC,rna-fam
+145,145,2DU3,3dRPC,rna-fam
+146,146,1J1U,3dRPC,rna-fam
+147,147,2CSX,3dRPC,rna-fam
+148,148,3EPH,3dRPC,rna-fam
+149,149,1H3E,3dRPC,rna-fam
+150,150,1F7U,3dRPC,rna-fam
+151,151,2AKE,3dRPC,rna-fam
+152,152,2ZM5,3dRPC,rna-fam
+153,153,3ADD,3dRPC,rna-fam
+154,154,2ZUE,3dRPC,rna-fam
+155,155,2FMT,3dRPC,rna-fam
+156,156,2CZJ,3dRPC,rna-fam
+157,157,2BTE,3dRPC,rna-fam
+158,158,1MMS,DRPScore,rna-fam
+159,159,3MOJ,DRPScore,rna-fam
+160,160,1H4S,DRPScore,rna-fam
+161,161,1IL2,DRPScore,rna-fam
+162,162,1GAX,DRPScore,rna-fam
+163,163,1N78,DRPScore,rna-fam
+164,164,1SER,DRPScore,rna-fam
+165,165,3FOZ,DRPScore,rna-fam
+166,166,1C0A,DRPScore,rna-fam
+167,167,1QTQ,DRPScore,rna-fam
+168,168,2DU3,DRPScore,rna-fam
+169,169,1J1U,DRPScore,rna-fam
+170,170,2CSX,DRPScore,rna-fam
+171,171,3EPH,DRPScore,rna-fam
+172,172,1H3E,DRPScore,rna-fam
+173,173,1F7U,DRPScore,rna-fam
+174,174,2AKE,DRPScore,rna-fam
+175,175,2ZM5,DRPScore,rna-fam
+176,176,3ADD,DRPScore,rna-fam
+177,177,2ZUE,DRPScore,rna-fam
+178,178,2FMT,DRPScore,rna-fam
+179,179,2CZJ,DRPScore,rna-fam
+180,180,2BTE,DRPScore,rna-fam
+441,441,1E8O,FTDMP,blind-complement
+442,442,2HW8,FTDMP,blind-complement
+443,443,1N78,FTDMP,blind-complement
+444,444,1KOG,FTDMP,blind-complement
+445,445,1G1X,FTDMP,blind-complement
+446,446,1YVP,FTDMP,blind-complement
+447,447,2DU3,FTDMP,blind-complement
+448,448,1JID,FTDMP,blind-complement
+449,449,2QUX,FTDMP,blind-complement
+450,450,1T0K,FTDMP,blind-complement
+451,451,2CSX,FTDMP,blind-complement
+452,452,3MOJ,FTDMP,blind-complement
+453,453,1R9F,FTDMP,blind-complement
+454,454,1F7U,FTDMP,blind-complement
+455,455,2ZM5,FTDMP,blind-complement
+456,456,2ANR,FTDMP,blind-complement
+457,457,1S03,FTDMP,blind-complement
+458,458,2CZJ,FTDMP,blind-complement
+459,459,1Q2R,FTDMP,blind-complement
+460,460,1H4S,FTDMP,blind-complement
+461,461,3CIY,FTDMP,blind-complement
+462,462,3LRR,FTDMP,blind-complement
+463,463,1SER,FTDMP,blind-complement
+464,464,2IPY,FTDMP,blind-complement
+465,465,2XDB,FTDMP,blind-complement
+466,466,2AZ0,FTDMP,blind-complement
+467,467,1J1U,FTDMP,blind-complement
+468,468,1H3E,FTDMP,blind-complement
+469,469,2ZUE,FTDMP,blind-complement
+470,470,3DD2,FTDMP,blind-complement
