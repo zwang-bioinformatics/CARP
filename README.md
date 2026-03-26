@@ -120,8 +120,8 @@ Inputs:
 
 Commands:
 ```
-python run_tools.py -target_src ./data/example/ -model_src ./data/example/example_model/
-python run.py -target_src ./data/example/ -model_src ./data/example/example_model/
+python run_tools.py -target_src ABSOLUTE_PATH/CARP/data/example/ -model_src ABSOLUTE_PATH/CARP/data/example/example_model/
+python run.py -target_src ABSOLUTE_PATH/CARP/data/example/ -model_src ABSOLUTE_PATH/CARP/data/example/example_model/
 ```
 
 Outputs:
