@@ -40,7 +40,7 @@ def format_title(title, bold = False):
 
 def mm_scale(df):
     mn, mx = df.min(), df.max()
-    if mn == 0 and mx == 0: return df
+    if mn == mx: return df*0
     return (2*(df - mn) / (mx - mn)) - 1
 
 ###################################
