@@ -185,17 +185,13 @@ to confirm everything is functional.
 ## **Citation**  
 
 ```
-@article{10.1093/bioinformatics/btag202,
-    author = {Siciliano, Andrew Jordan and Bao, Yifan and Shrestha, Bishal and Wang, Zheng},
-    title = {Inferring the qualities of protein-RNA models with graph transformers},
-    journal = {Bioinformatics},
-    pages = {btag202},
-    year = {2026},
-    month = {04},
-    issn = {1367-4811},
-    doi = {10.1093/bioinformatics/btag202},
-    url = {https://doi.org/10.1093/bioinformatics/btag202},
-    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btag202/68179807/btag202.pdf},
+@article{siciliano2026inferring,
+  title={Inferring the qualities of protein-RNA models with graph transformers},
+  author={Siciliano, Andrew Jordan and Bao, Yifan and Shrestha, Bishal and Wang, Zheng},
+  journal={Bioinformatics},
+  pages={btag202},
+  year={2026},
+  publisher={Oxford University Press}
 }
 ```
 
